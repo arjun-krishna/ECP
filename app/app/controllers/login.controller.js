@@ -13,7 +13,7 @@ angular.module('App')
     	$http({
     		'method'	: 'POST',
     		'url'		: 'http://127.0.0.1:3000/citizen/login/',
-    		'data'		: {'username' : $scope.username, 'password': $scope.password}			
+    		'data'		: {'name' : $scope.username, 'password': $scope.password}			
     	})
     	.then(function (resp) {
     		if(resp.status == 200){
