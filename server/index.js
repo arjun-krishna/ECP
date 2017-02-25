@@ -16,9 +16,14 @@ db.once('open', function() {
 
 app.get('/', function (req, res) {
   res.send('ECP-Server v1.0.0');
-})
+});
+
+app.get('/citizen/login',function (req, res) {
+	// req.data.username , req.data.password
+	res.send(200);
+});
 
 app.listen(3000, function () {
   console.log('ECP Server listening on port 3000!')
-})
+});
 
