@@ -111,7 +111,7 @@ app.post('/admin/login',function (req, res) {
 });
 
 // add a complaint
-app.post('/complaint/submit', function (req, res) {
+app.post('/complaint/new', function (req, res) {
 	var complaint = new model['Complaint'](req.body);
 	complaint.save(function (err, data) {
 		if (err) {
@@ -123,6 +123,90 @@ app.post('/complaint/submit', function (req, res) {
 	});
 });
 
+app.get('/complaint/:id', function (req, res) {
+	try {
+		 model["Complaint"].findById(req.params.id, function(err, data) {
+				if (err) {
+					console.log(err);
+					res.sendStatus(403); 
+				} else {
+					console.log(data);
+					res.json(data);
+				}
+		 });
+	} catch(e) {
+		res.sendStatus(500);
+	}
+});
+
+app.get('/complaint/:id/upvote/', function (req, res) {
+	try {
+		 model["Complaint"].findById(req.params.id, function(err, data) {
+				if (err) {
+					console.log(err);
+					res.sendStatus(403); 
+				} else {
+					console.log(data);
+					data.upvotes+=1
+					data.save(function (err, data) {
+						if (err) {
+							console.error(err);
+							res.sendStatus(406);
+						} else {
+							res.sendStatus(200); 
+						}
+					})
+				}
+		 });
+	} catch(e) {
+		res.sendStatus(500);
+	}
+})
+
+app.get('/newsfeed/:name', function (req, res) {
+	try {
+		 model["Complaint"].find({}, function(err, data) {
+				if (err) {
+					console.log(err);
+					res.sendStatus(403); 
+				} else {
+					console.log(data);
+					res.json(data)
+				}
+		 });
+	} catch(e) {
+		res.sendStatus(500);
+	}
+});
+
+app.post('/complaint/:id/newcomment', function (req, res) {
+	var comment = new model['Comment'](req.body);
+	comment.save(function (err, data) {
+		if (err) {
+			console.error(err);
+			res.sendStatus(406);
+		} else {
+			model["Complaint"].findOne({'_id':req.params.id}, function(err, data){
+				if(err){
+					console.log(err);
+					res.sendStatus(404); 
+				}
+				else {
+					data.comments.push(comment)
+					data.save(function (err, data) {
+						if (err) {
+							console.error(err);
+							res.sendStatus(406);
+						} else {
+							console.log(data);
+							res.sendStatus(200); 
+						}
+					})	
+				}
+			})
+		}
+	});
+});
 
 
 app.listen(3000, function () {

@@ -1,9 +1,18 @@
 <div>
 	<h3>user {{username}}</h3>
 	<ul>
-		<li ng-repeat="complaint in complaints" ng-click="gotocomplaint(complaint)">
-			<h3>{{complaint.title}}</h3>
-			<p>{{complaint.description}}</p>
+		<li ng-repeat="complaint in complaints">
+			<div ng-click="gotocomplaint(complaint)"> 
+				<h3>{{complaint.title}}</h3>
+				<p>{{complaint.description}}</p>
+			</div>
+			<div>
+				<span>upvotes : {{complaint.upvotes}}</span>
+				<span ng-hide="complaint.upvoted" ng-click="upvote(complaint)">(Up)</span>
+				<span ng-show="complaint.upvoted">(Done)</span>
+			</div>
+
+
 		</li>
 	</ul>
 	<button ng-click="add_complaint()">Add complaint</button>
