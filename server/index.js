@@ -58,7 +58,7 @@ app.post('/admin/signup', function(req, res) {
 });
 
 // LOGIN Functions
-app.get('/citizen/login',function (req, res) {
+app.post('/citizen/login',function (req, res) {
 	// req.data.name , req.data.password
 	 try {
 		 model["Citizen"].find({name: req.body.name}, function(err, data) {
@@ -74,7 +74,7 @@ app.get('/citizen/login',function (req, res) {
 	}
 });
 
-app.get('/admin/login',function (req, res) {
+app.post('/admin/login',function (req, res) {
 	// req.data.name , req.data.password
 	try {
 		 model["Admin"].find({name: req.body.name}, function(err, data) {
