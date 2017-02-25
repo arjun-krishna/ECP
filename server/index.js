@@ -67,6 +67,9 @@ app.post('/citizen/login',function (req, res) {
 					res.sendStatus(403); 
 				} else {
 					console.log(data);
+					if (data.length == 0) {
+						res.sendStatus(406);
+					}
 				}
 		 });
 	} catch(e) {
