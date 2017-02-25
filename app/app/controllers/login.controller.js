@@ -12,7 +12,7 @@ angular.module('App')
     	// $location.path('/user/'+$scope.username);
     	$http({
     		'method'	: 'POST',
-    		'url'		: 'htpp://127.0.0.1:3000/citizen/login/',
+    		'url'		: 'http://127.0.0.1:3000/citizen/login/',
     		'data'		: {'username' : $scope.username, 'password': $scope.password}			
     	})
     	.then(function (resp) {
