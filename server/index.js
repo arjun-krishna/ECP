@@ -1,4 +1,5 @@
 var express = require('express')
+var bodyParser = require('body-parser')
 var app = express()
 
 var model  = require('./database')
@@ -12,6 +13,8 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('Connected to the Database!');
 });
+
+app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
