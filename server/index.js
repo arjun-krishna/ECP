@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 // citizen signup
 app.post('/citizen/signup', function(req, res) {
 
-	console.log(req.data);
+	// console.log(req.body);
 	var citizen = new model['Citizen'](req.body);
 	citizen.save(function (err, data) {
 		if (err) {
