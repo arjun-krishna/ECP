@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 	<form>
 		<div>
 			<label>Title  : </label>
@@ -32,4 +32,102 @@
 		</div>
 		<button ng-click="submit_complaint()">Submit</button>
 	</form>
-</div>
+</div> -->
+
+
+<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">COMPLAINT REGISTER FORM</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" >
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Title</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="title" ng-model="complaint.title" id="name"  placeholder="Enter Title"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Description</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="description" ng-model="complaint.description" id="name"  placeholder="Enter Description"/>
+								</div>
+							</div>
+						</div>
+
+						
+
+						<div class="form-group">
+							<label for="ward" class="cols-sm-2 control-label">Ward : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="ward" ng-model="complaint.ward" id="ward"  placeholder="Enter your ward"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="area" class="cols-sm-2 control-label">Area  : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="area" ng-model="complaint.area" id="area"  placeholder="Enter your area"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="city" class="cols-sm-2 control-label">City : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="city" ng-model="complaint.city" id="city"  placeholder="Enter your city"/>
+								</div>
+							</div>
+						</div>	
+
+						<div class="form-group">
+							<label for="state" class="cols-sm-2 control-label">State : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="state" ng-model="complaint.state" id="state"  placeholder="Enter your state"/>
+								</div>
+							</div>
+						</div>	
+
+						<div class="form-group">
+							<label for="state" class="cols-sm-2 control-label">Tags : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="tag" ng-model="newtag" id="tag"  placeholder="Enter your state"/>
+									<button ng-click="add_tag()">add tag</button>
+								</div>
+							</div>
+							<span ng-repeat="tag in complaint.tags">{{tag}} </span>
+						</div>				
+
+						<div class="form-group ">
+							<button type="submit" name="" ng-click="submit_complaint()" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+						<!-- <div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div> -->
+					</form>
+				</div>
+			</div>
+			{{user}}
+		</div>

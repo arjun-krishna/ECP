@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 	SIGNUP FORM
 	<form>
 		<div>
@@ -30,3 +30,88 @@
 	</form>
 	{{user}}
 </div>
+ -->
+
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">SIGNUP FORM</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+					<form class="form-horizontal" method="post" action="#">
+						
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" ng-model="user.name" id="name"  placeholder="Enter your Name"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="password" ng-model="user.password" id="password"  placeholder="Enter your Password"/>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<label for="ward" class="cols-sm-2 control-label">Ward : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="ward" ng-model="user.ward" id="ward"  placeholder="Enter your ward"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="area" class="cols-sm-2 control-label">Area  : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="area" ng-model="user.area" id="area"  placeholder="Enter your area"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="city" class="cols-sm-2 control-label">City : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="city" ng-model="user.city" id="city"  placeholder="Enter your city"/>
+								</div>
+							</div>
+						</div>	
+
+						<div class="form-group">
+							<label for="state" class="cols-sm-2 control-label">State : </label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="state" ng-model="user.state" id="state"  placeholder="Enter your state"/>
+								</div>
+							</div>
+						</div>					
+
+						<div class="form-group ">
+							<button type="submit" name="" ng-click="submit_form()" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+						</div>
+						<!-- <div class="login-register">
+				            <a href="index.php">Login</a>
+				         </div> -->
+					</form>
+				</div>
+			</div>
+			{{user}}
+		</div>
