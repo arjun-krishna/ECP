@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 
 var CommentSchema = mongoose.Schema({
-    name : String,
-    comment : String,
-    admin_tags : [mongoose.Types.ObjectId],
-    timestamp : Date
+    name : {type :String , required : true},
+    comment : {type :String , required : true},
+    admin_tags : [{ type : mongoose.Schema.ObjectId, ref: 'Admin' }],
+    timestamp : {type :Date , required : true}
 });
 
 // var Comment = mongoose.model('Comment', CommentSchema);
