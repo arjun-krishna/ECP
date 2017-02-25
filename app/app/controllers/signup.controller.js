@@ -23,11 +23,9 @@ angular.module('App')
     		}
     		else {
     			console.log('error')
-    			$rootScope.user = { 
-		    		'name'  : "Suhas", 
-		    		"password" 	:  "password"
-		    	}
-		    	$location.path('/user/'+$rootScope.user.name);
+    			//error 
+                // clear data
+                alert("something wrong")
     		}
     	}, function (err) {
     		// body...
