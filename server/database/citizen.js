@@ -6,7 +6,7 @@ var CitizenSchema = mongoose.Schema({
     ward : String,
     area : String,
    	city : String,
-   	State : String
+   	state : String
 });
 
 // var Citizen = mongoose.model('Citizen', CitizenSchema);

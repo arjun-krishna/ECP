@@ -23,6 +23,12 @@ app.get('/citizen/login',function (req, res) {
 	res.send(200);
 });
 
+app.get('/admin/login',function (req, res) {
+	// req.data.username , req.data.password
+	res.send(200);
+});
+
+
 app.listen(3000, function () {
   console.log('ECP Server listening on port 3000!')
 });

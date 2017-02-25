@@ -6,7 +6,7 @@ var AdminSchema = mongoose.Schema({
     ward : String,
     area : String,
    	city : String,
-   	State : String,
+   	state : String,
    	rank : Number,
    	department : String,
    	tags : [String]
