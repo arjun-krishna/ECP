@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 	<h3>user {{username}}</h3>
 	<ul>
 		<li ng-repeat="complaint in complaints">
@@ -16,4 +16,21 @@
 		</li>
 	</ul>
 	<button ng-click="add_complaint()">Add complaint</button>
+</div>
+ -->
+<button ng-click="add_complaint()"  style="color:black;">Add complaint</button>
+<div class="feed__container">
+
+	  <div class="codepenFeed__container card">
+      <span class="codepenFeed__name">{{username}} </span>
+      <div class="codepenFeed__item-container codepenFeed__scrollbar">
+      <div class="codepenFeed__item" ng-repeat="complaint in complaints">
+      <a href="" target="_blank" ng-click="gotocomplaint(complaint)">
+      <img class="codepenFeed__thumbnail card" src="app/img/small.png" alt="Screenshot of {{complaint.title}}">
+      </a>
+      <span class="codepenFeed__title codepenFeed__glass">{{complaint.title}}</span>
+      <span class="codepenFeed__date codepenFeed__glass">Description: {{complaint.description}}</span>
+      </div>
+      </div>
+      </div>
 </div>

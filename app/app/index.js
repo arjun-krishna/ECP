@@ -1,5 +1,5 @@
 var app = angular.module('App', [
-  'ngRoute'
+  'ngRoute', 'angularCSS'
 ]);
 app.config(function ($routeProvider) {
     $routeProvider
@@ -9,12 +9,14 @@ app.config(function ($routeProvider) {
       .when('/login', {
         templateUrl: 'app/views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controllerAs: 'login',
+        css: 'app/styles/loginStyle.css'
       })
       .when('/user/:id', {
         templateUrl: 'app/views/user.html',
         controller: 'UserCtrl',
-        controllerAs: 'user'
+        controllerAs: 'user',
+        css: 'app/styles/userStyle.css'
       })
       .when('/complaint/:id', {
         templateUrl: 'app/views/complaint.html',
@@ -24,12 +26,14 @@ app.config(function ($routeProvider) {
       .when('/addcomplaint/', {
         templateUrl: 'app/views/addcomplaint.html',
         controller: 'AddComplaintCtrl',
-        controllerAs: 'addcom'
+        controllerAs: 'addcom',
+        css: 'app/styles/loginStyle.css'
       })
       .when('/signup/', {
         templateUrl: 'app/views/signup.html',
         controller: 'SignupCtrl',
-        controllerAs: 'signup'
+        controllerAs: 'signup',
+        css: 'app/styles/loginStyle.css'
       })
 });
 
