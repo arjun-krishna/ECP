@@ -41,18 +41,7 @@ angular.module('App')
     		$scope.complaints = resp.data
     	}, function (err){
     		console.log(err)
-			$scope.complaints = [
-		    	{
-		    		'id' : 1,
-		    		'title' : 'HEllo comp1',
-		    		'description' : 'I am telling u i dont likt the shit'
-		    	},
-		    	{
-		    		'id'	: 2,
-		    		'title' : 'HEllo comp2',
-		    		'description' : 'I am tefk this shitling u i dont likt the shit'
-		    	}
-		    ]
+			alert("Wrong")
     	})
     }
 

@@ -6,13 +6,6 @@ angular.module('App')
     	$location.path('/login');
     }
     $scope.complaint = {
-    	'title' 		: 'Hello world!!!',
-    	'description' 	: 'Hello i am not any thing wrong. I am mad and isane and i dont regret to tell u u   r a dead aman',
-    	'ward'			: 'DCF lab',
-    	'area'			: 'IIT madras',
-    	'city'			: 'Chennai',
-    	'state'			: 'Tamil Nadu',
-    	'tags'			: ['sad', 'roads not clean']
     }
 
     $scope.submit_comment = function(){
@@ -39,15 +32,7 @@ angular.module('App')
     		$scope.complaint = resp.data
     	}, function(err){
     		console.log(err);
-    		$scope.complaint = {
-		    	'title' 		: 'Hello world!!!',
-		    	'description' 	: 'Hello i am not any thing wrong. I am mad and isane and i dont regret to tell u u   r a dead aman',
-		    	'ward'			: 'DCF lab',
-		    	'area'			: 'IIT madras',
-		    	'city'			: 'Chennai',
-		    	'state'			: 'Tamil Nadu',
-		    	'tags'			: ['sad', 'roads not clean']
-		    }
+    		alert("wrong")
     	})
     }
 

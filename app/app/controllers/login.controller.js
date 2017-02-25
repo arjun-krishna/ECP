@@ -32,11 +32,7 @@ angular.module('App')
     	}, function (err) {
     		// body...
     		console.log(err)
-    		$rootScope.user = { 
-	    		'name'  : "Suhas", 
-	    		"password" 	:  "password"
-	    	}
-	    	$location.path('/user/'+$rootScope.user.username);
+            alert("wrong")
     	})
     }
     $scope.redirecttosignup = function(){
