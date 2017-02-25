@@ -6,8 +6,9 @@ angular.module('App')
     }
     $scope.user = {}
     $scope.submit_form = function(){
-    	
-    	$location.path('/user/'+$scope.user.name);
+    	console.log($scope.user)
+        console.log("lol")
+    	// $location.path('/user/'+$scope.user.name);
     	$http({
     		'method'	: 'POST',
     		'url'		: 'http://127.0.0.1:3000/citizen/signup/',
