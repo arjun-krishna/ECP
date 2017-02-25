@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 	<form>
 		<label>USERNAME : </label>
 		<input type="text" name="username" ng-model="username">
@@ -6,4 +6,22 @@
 		<input type="password" name="password" ng-model="password">
 		<input type="submit" name="" ng-click="submit_form()">
 	</form>
+</div>
+ -->
+
+<div class="wrapper">
+  <form class="login">
+    <p class="title">Log in</p>
+    <input type="text" placeholder="Username" name="username" ng-model="username" autofocus/>
+    <i class="fa fa-user"></i>
+    <input type="password" name="password" ng-model="password" placeholder="Password" />
+    <i class="fa fa-key"></i>
+    <a href="/#!/signup">New User? Sign up!</a>
+    <button ng-click="submit_form()">
+      <i class="spinner"></i>
+      <span class="state">Log in</span>
+    </button>
+  </form>
+  <!-- <footer></footer> -->
+  </p>
 </div>
