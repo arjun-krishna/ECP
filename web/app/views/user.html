@@ -1,0 +1,21 @@
+<style>
+
+
+</style>
+
+
+<div class = "main">
+	<div id="info">
+		<h1> {{ username }} </h1>
+	</div>
+	<div id="issue-list">
+
+		<div ng-repeat="issue in issues" href="/complaint/"+{{issue._id}}>
+			<li> {{issue.description.substr(0,100)}} </li>
+			<div ng-repeat="tag in issue.tags" >
+				<p> {{ tag }} </p>
+			</div>
+		</div>
+
+	</div>
+</div>

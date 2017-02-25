@@ -2,15 +2,15 @@ var mongoose = require('mongoose');
 var CommentSchema = require('./comments.js')
 
 var ComplaintSchema = mongoose.Schema({
-    filled_by : String,
-    timestamp : Date,
+    filled_by : {type :String , required : true},
+    timestamp : {type :Date , required : true},
     upvotes : { type: Number, default: 0 },
     location : { "lat" : 	Number, "long": Number},
-	  ward : String,
-    area : String,
-   	city : String,
-   	State : String,
-   	description : String,
+	  ward : {type :String , required : true},
+    area : {type :String , required : true},
+   	city : {type :String , required : true},
+   	State : {type :String , required : true},
+   	description : {type :String , required : true},
    	tags : [String],
    	img: { data: Buffer, contentType: String },
    	comments : [CommentSchema]
