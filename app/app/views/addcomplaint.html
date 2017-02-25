@@ -1,1 +1,35 @@
-addcomplaint.html
+<div>
+	<form>
+		<div>
+			<label>Title  : </label>
+			<input type="text" name="title" ng-model="complaint.title">
+		</div>
+		<div>
+			<label>Description  : </label>
+			<input type="text" name="description" ng-model="complaint.description">
+		</div>
+		<div>
+			<label>Ward : </label>
+			<input type="text" name="Ward" ng-model="complaint.ward">
+		</div>
+		<div>
+			<label>Area  : </label>
+			<input type="text" name="area" ng-model="complaint.area">
+		</div>
+		<div>
+			<label>City : </label>
+			<input type="text" name="city" ng-model="complaint.city">
+		</div>
+		<div>
+			<label>State  : </label>
+			<input type="text" name="state" ng-model="complaint.state">
+		</div>
+		<div>
+			<label>tags  : </label>
+			<span ng-repeat="tag in complaint.tags">{{tag}}</span>
+			<input type="text" name="tag" ng-model="newtag">
+			<button ng-click="add_tag()">add tag</button>
+		</div>
+		<button ng-click="submit_complaint()">Submit</button>
+	</form>
+</div>

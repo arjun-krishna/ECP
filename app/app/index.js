@@ -26,4 +26,14 @@ app.config(function ($routeProvider) {
         controller: 'AddComplaintCtrl',
         controllerAs: 'addcom'
       })
+      .when('/signup/', {
+        templateUrl: 'app/views/signup.html',
+        controller: 'SignupCtrl',
+        controllerAs: 'signup'
+      })
+});
+
+app.run(function ($rootScope){
+  $rootScope.isloggedin =false;
+  $rootScope.user = null;
 });

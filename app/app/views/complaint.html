@@ -1,0 +1,30 @@
+<div>
+	<div>
+		<label>Title  : </label>
+		<h3>{{complaint.title}}</h3>
+	</div>
+	<div>
+		<label>Description  : </label>
+		<p>{{complaint.description}}</p>
+	</div>
+	<div>
+		<label>Ward : </label>
+		<p>{{complaint.ward}}</p>
+	</div>
+	<div>
+		<label>Area  : </label>
+		<p>{{complaint.area}}</p>
+	</div>
+	<div>
+		<label>City : </label>
+		<p>{{complaint.city}}</p>
+	</div>
+	<div>
+		<label>State  : </label>
+		<p>{{complaint.state}}</p>
+	</div>
+	<div>
+		<label>tags  : </label>
+		<span ng-repeat="tag in complaint.tags">  {{tag}}  </span>
+	</div>
+</div>
