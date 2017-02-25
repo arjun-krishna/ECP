@@ -59,8 +59,8 @@ app.post('/admin/signup', function(req, res) {
 
 // LOGIN Functions
 app.post('/citizen/login',function (req, res) {
-	// req.data.name , req.data.password
-	 try {
+	
+	try {
 		 model["Citizen"].find({name: req.body.name}, function(err, data) {
 				if (err) {
 					console.log(err);
@@ -68,7 +68,14 @@ app.post('/citizen/login',function (req, res) {
 				} else {
 					console.log(data);
 					if (data.length == 0) {
-						res.sendStatus(406);
+						res.sendStatus(406); // user not present
+					} else {
+						if (data[0].password == req.body.password) {
+							res.sendStatus(200);
+						} else {
+							res.sendStatus(401); // incorrect password!
+						}
+
 					}
 				}
 		 });
@@ -78,7 +85,7 @@ app.post('/citizen/login',function (req, res) {
 });
 
 app.post('/admin/login',function (req, res) {
-	// req.data.name , req.data.password
+	
 	try {
 		 model["Admin"].find({name: req.body.name}, function(err, data) {
 				if (err) {
@@ -86,6 +93,16 @@ app.post('/admin/login',function (req, res) {
 					res.sendStatus(403); 
 				} else {
 					console.log(data);
+					if (data.length == 0) {
+						res.sendStatus(406); // user not present
+					} else {
+						if (data[0].password == req.body.password) {
+							res.sendStatus(200);
+						} else {
+							res.sendStatus(401); // incorrect password!
+						}
+
+					}
 				}
 		 });
 	} catch(e) {
