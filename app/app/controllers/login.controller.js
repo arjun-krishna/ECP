@@ -19,6 +19,10 @@ angular.module('App')
     		if(resp.status == 200){
     			console.log("Logged in");
     			// change rootscope variable
+                $rootScope.user = {
+                    'name'  : $scope.username, 
+                    "password"  : $scope.password
+                }
     			$location.path('/user/'+$scope.username);
     		}
     		else {
@@ -29,7 +33,7 @@ angular.module('App')
     		// body...
     		console.log(err)
     		$rootScope.user = { 
-	    		'username'  : "Suhas", 
+	    		'name'  : "Suhas", 
 	    		"password" 	:  "password"
 	    	}
 	    	$location.path('/user/'+$rootScope.user.username);

@@ -27,4 +27,32 @@
 		<label>tags  : </label>
 		<span ng-repeat="tag in complaint.tags">  {{tag}}  </span>
 	</div>
+	<div>
+		<div>
+			<label>Comment Thread : </label>
+			<ul>
+				<li ng-repeat="comment in complaint.comments">
+					<div>
+						<div>
+							<span>{{comment.name}} at {{comment.timestamp | date}}</span>
+						</div>
+						<div>
+							<p>{{comment.comment}}</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div ng-if="complaint.comments.length == 0">
+				No comments yets
+			</div>
+		</div>
+		<div>
+			<label>Add a comment</label>
+			<div>
+				<input type="text" ng-model="newcomment.comment">
+				<button ng-click="submit_comment()">Submit</button>
+			</div>
+		</div>
+	</div>
+	
 </div>
