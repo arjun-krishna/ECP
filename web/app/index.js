@@ -16,7 +16,7 @@ app.config(function ($routeProvider) {
         templateUrl: 'app/views/signup.html',
         controller: 'SignupCtrl',
         controllerAs: 'signup',
-        css: 'app/styles/loginStyle.css'
+        css: 'app/styles/signup.css'
       })
       .when('/user/:id', {
         templateUrl: 'app/views/user.html',
@@ -27,7 +27,8 @@ app.config(function ($routeProvider) {
       .when('/complaint/:id', {
         templateUrl: 'app/views/complaint.html',
         controller: 'ComplaintCtrl',
-        controllerAs: 'comp'
+        controllerAs: 'comp',
+        css: 'app/styles/complaint.css'
       })
 
 });

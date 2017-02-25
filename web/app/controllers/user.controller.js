@@ -39,6 +39,20 @@ angular.module('App')
     	.then(function (resp){
     		console.log("got 'em all")
     		$scope.complaints = resp.data
+                    // My addition
+        $scope.complaints = [
+                {
+                    'id' : 1,
+                    'title' : 'HEllo comp1',
+                    'description' : 'I am telling u i dont likt the shit'
+                },
+                {
+                    'id'    : 2,
+                    'title' : 'HEllo comp2',
+                    'description' : 'I am tefk this shitling u i dont likt the shit'
+                }
+            ]
+
     	}, function (err){
     		console.log(err)
 			$scope.complaints = [
