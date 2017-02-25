@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 app.post('/citizen/signup', function(req, res) {
 
 	console.log(req.data);
-	var citizen = new model['Citizen'](req.data);
+	var citizen = new model['Citizen'](req.body);
 	citizen.save(function (err, data) {
 		if (err) {
 			console.error(err);
@@ -43,7 +43,7 @@ app.post('/citizen/signup', function(req, res) {
 // admin signup
 app.post('/admin/signup', function(req, res) {
 
-	var admin = new model['Admin'](req.data);
+	var admin = new model['Admin'](req.body);
 	admin.save(function (err, data) {
 		if (err) {
 			console.error(err);
@@ -56,9 +56,9 @@ app.post('/admin/signup', function(req, res) {
 
 // LOGIN Functions
 app.get('/citizen/login',function (req, res) {
-	// req.data.username , req.data.password
+	// req.data.name , req.data.password
 	 try {
-		 model["Citizen"].find({name: req.data.username}, function(err, data) {
+		 model["Citizen"].find({name: req.body.name}, function(err, data) {
 				if (err) {
 					console.log(err);
 					res.sendStatus(403); 
@@ -72,9 +72,9 @@ app.get('/citizen/login',function (req, res) {
 });
 
 app.get('/admin/login',function (req, res) {
-	// req.data.username , req.data.password
+	// req.data.name , req.data.password
 	try {
-		 model["Admin"].find({name: req.data.username}, function(err, data) {
+		 model["Admin"].find({name: req.body.name}, function(err, data) {
 				if (err) {
 					console.log(err);
 					res.sendStatus(403); 
@@ -89,7 +89,7 @@ app.get('/admin/login',function (req, res) {
 
 // add a complaint
 app.post('/complaint/submit', function (req, res) {
-	var complaint = new model['Complaint'](req.data);
+	var complaint = new model['Complaint'](req.body);
 	complaint.save(function (err, data) {
 		if (err) {
 			console.error(err);
