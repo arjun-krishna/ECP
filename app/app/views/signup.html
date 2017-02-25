@@ -2,8 +2,8 @@
 	SIGNUP FORM
 	<form>
 		<div>
-			<label>USERNAME : </label>
-			<input type="text" name="username" ng-model="user.username">
+			<label>NAME : </label>
+			<input type="text" name="name" ng-model="user.name">
 		</div>
 		<div>
 			<label>PASSWORD : </label>
@@ -28,4 +28,5 @@
 		<input type="submit" name="" ng-click="submit_form()">
 		<a href="#" ng-click="redirecttologin()">Already a user?</a>
 	</form>
+	{{user}}
 </div>

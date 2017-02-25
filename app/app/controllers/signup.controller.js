@@ -4,12 +4,10 @@ angular.module('App')
     if($rootScope.user != null){
     	$location.path('/user/' + $rootScope.user.username);
     }
-    $scope.username = "";
-    $scope.password = "";
-
+    $scope.user = {}
     $scope.submit_form = function(){
     	
-    	$location.path('/user/'+$scope.username);
+    	$location.path('/user/'+$scope.user.name);
     	$http({
     		'method'	: 'POST',
     		'url'		: 'http://127.0.0.1:3000/citizen/signup/',
@@ -20,15 +18,15 @@ angular.module('App')
     			console.log("new user added");
     			// change rootscope variable
     			$rootScope.user = resp.data
-    			$location.path('/user/'+$scope.username);
+    			$location.path('/user/'+$scope.user.name);
     		}
     		else {
     			console.log('error')
     			$rootScope.user = { 
-		    		'username'  : "Suhas", 
+		    		'name'  : "Suhas", 
 		    		"password" 	:  "password"
 		    	}
-		    	$location.path('/user/'+$rootScope.user.username);
+		    	$location.path('/user/'+$rootScope.user.name);
     		}
     	}, function (err) {
     		// body...
